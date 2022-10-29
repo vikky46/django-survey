@@ -223,6 +223,22 @@
   }
 },
 {
+ "model": "survey.survey",
+ "pk": 13,
+ "fields": {
+  "name": "Category without description",
+  "description": "Test survey with category without description",
+  "is_published": true,
+  "need_logged_user": false,
+  "editable_answers": true,
+  "display_method": 0,
+  "template": null,
+  "publish_date": "2022-10-29",
+  "expire_date": "2050-03-15",
+  "redirect_url": ""
+ }
+},
+{
  "model": "survey.category",
  "pk": 1,
  "fields": {
@@ -270,6 +286,26 @@
   "survey": 11,
   "order": 2,
   "description": "A second multipage category"
+ }
+},
+{
+ "model": "survey.category",
+ "pk": 6,
+ "fields": {
+  "name": "Category with description",
+  "survey": 13,
+  "order": 1,
+  "description": "Description of category"
+ }
+},
+{
+ "model": "survey.category",
+ "pk": 7,
+ "fields": {
+  "name": "Category without description",
+  "survey": 13,
+  "order": 2,
+  "description": null
  }
 },
 {
@@ -478,7 +514,46 @@
   "survey": 12,
   "type": "text",
   "choices": ""
-}
+ }
+},
+{
+ "model": "survey.question",
+ "pk": 17,
+ "fields": {
+  "text": "Question for category with description",
+  "order": 1,
+  "required": false,
+  "category": 6,
+  "survey": 13,
+  "type": "text",
+  "choices": ""
+ }
+},
+{
+ "model": "survey.question",
+ "pk": 18,
+ "fields": {
+  "text": "Question for category without description",
+  "order": 2,
+  "required": false,
+  "category": 7,
+  "survey": 13,
+  "type": "text",
+  "choices": ""
+ }
+},
+{
+ "model": "survey.question",
+ "pk": 19,
+ "fields": {
+  "text": "Question without category",
+  "order": 3,
+  "required": false,
+  "category": null,
+  "survey": 13,
+  "type": "text",
+  "choices": ""
+ }
 },
 {
  "model": "survey.response",
