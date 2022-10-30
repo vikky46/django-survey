@@ -9,7 +9,7 @@
     </thead> -->
     <tbody>
 {% for form in response_form %}
-	{% if form.field.widget.attrs.category == category.name or not form.field.widget.attrs.category %}
+	{% if form.field.widget.attrs.category == category.name or category.name == 'No category' and not form.field.widget.attrs.category %}
         <tr class="{% if form.errors%} danger {% endif %}">
             <td>
 	            {{ form.label|safe }}

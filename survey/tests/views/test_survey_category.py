@@ -14,3 +14,12 @@ class TestSurveyCategory(BaseTest):
         """
         response = self.client.get(reverse("survey-detail", args=(13,)))
         self.assertNotContains(response, "None")
+
+    def test_without_category_not_duplicated(self):
+        """
+        Checks that question without category is not duplicated when there is
+        a question with category in the same survey.
+
+        """
+        response = self.client.get(reverse("survey-detail", args=(13,)))
+        self.assertContains(response, "Question without category", count=1)
