@@ -46,7 +46,6 @@ class SortAnswer:
 
 
 class Question(models.Model):
-
     TEXT = "text"
     SHORT_TEXT = "short-text"
     RADIO = "radio"
